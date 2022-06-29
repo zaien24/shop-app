@@ -16,9 +16,15 @@ export default {
       commit(SET_ACCESS_TOKEN, accessToken)
 
       return api.get('/users/myinfo')
-
     }).then(res => {
       commit(SET_MY_INFO, res.data)
     })
+  },
+  signinByToken ({ commit }, token) {
+    commit(SET_ACCESS_TOKEN, token)
+    return api.get('/users/myinfo')
+      .then(res => {
+        commit(SET_MY_INFO, res.data)
+      })
   }
 }
