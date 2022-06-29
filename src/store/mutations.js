@@ -1,6 +1,8 @@
 import {
   SET_ACCESS_TOKEN,
-  SET_MY_INFO
+  SET_MY_INFO,
+  DESTROY_ACCESS_TOKEN,
+  DESTROY_MY_INFO
 } from './mutation-types'
 import api from '@/api'
 import Cookies from 'js-cookie'
@@ -19,5 +21,13 @@ export default {
     if (myinfo) {
       state.myinfo = myinfo
     }
+  },
+  [DESTROY_ACCESS_TOKEN] (state) {
+    state.accessToken = ''
+    delete api.defaults.headers.common.Authorization
+    Cookies.remove('accessToken')
+  },
+  [DESTROY_MY_INFO] (state) {
+    state.myinfo = null
   }
 }
