@@ -5,6 +5,8 @@ import { AuthRouters } from '@/router/auth'
 import { MemberRouters } from '@/router/member'
 import { CodeGroupRouters } from '@/router/codegroup'
 
+import { CodeDetailRouters } from '@/router/codedetail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,6 +15,7 @@ export default new Router({
     ...HomeRouters,
     ...AuthRouters,
     ...MemberRouters,
-    ...CodeGroupRouters
+    ...CodeGroupRouters,
+    ...CodeDetailRouters
   ]
 })
