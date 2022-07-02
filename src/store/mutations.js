@@ -5,7 +5,8 @@ import {
   DESTROY_MY_INFO,
   FETCH_CODEGROUP_LIST,
   FETCH_CODEGROUP,
-  FETCH_CODEDETAIL_LIST
+  FETCH_CODEDETAIL_LIST,
+  FETCH_CODEDETAIL
 } from './mutation-types'
 
 import api from '@/api'
@@ -42,5 +43,8 @@ export default {
   },
   [FETCH_CODEDETAIL_LIST] (state, codeDetails) {
     state.codeDetails = codeDetails
+  },
+  [FETCH_CODEDETAIL] (state, codeDetail) {
+    state.codeDetail = codeDetail
   }
 }

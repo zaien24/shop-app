@@ -6,7 +6,8 @@ import {
   DESTROY_MY_INFO,
   FETCH_CODEGROUP_LIST,
   FETCH_CODEGROUP,
-  FETCH_CODETAIL_LIST
+  FETCH_CODEDETAIL_LIST,
+  FETCH_CODEDETAIL
 } from './mutation-types'
 
 export default {
@@ -48,10 +49,18 @@ export default {
         commit(FETCH_CODEGROUP, res.data)
       })
   },
-  fetchCodeDetailList ( { commit }) {
+  fetchCodeDetailList ({ commit }) {
     return api.get('/codedetails')
       .then(res => {
         commit(FETCH_CODEDETAIL_LIST, res.data)
+      })
+  },
+  fetchCodeDetail ({ commit }, payload) {
+    const {groupCode, codeValue} = payload
+    
+    return api.get(`/codedetails/${groupCode}/${codeValue}`)
+      .then(res => {
+        commit(FETCH_CODEDETAIL, res.data)
       })
   }
 }

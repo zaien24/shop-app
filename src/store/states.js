@@ -3,5 +3,6 @@ export default {
   myinfo: null,
   codeGroups: [],
   codeGroup: null,
-  codeDetails: []
+  codeDetails: [],
+  codeDetail: null
 }
