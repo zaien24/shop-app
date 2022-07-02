@@ -4,6 +4,7 @@ import Footer from '@/components/common/Footer'
 import MenuBar from '@/components/common/MenuBar'
 import CodeDetailListPage from '@/pages/codedetail/CodeDetailListPage'
 import CodeDetailRegisterPage from '@/pages/codedetail/CodeDetailRegisterPage'
+import CodeDetailModifyPage from '@/pages/codedetail/CodeDetailModifyPage'
 import CodeDetailReadPage from '@/pages/codedetail/CodeDetailReadPage'
 
 export const CodeDetailRouters = [
@@ -63,5 +64,27 @@ export const CodeDetailRouters = [
       }
       next()
     }
+  },
+  {
+    path: '/codedetail/:groupCode/:codeValue/modify',
+    name: 'CodeDetailModifyPage',
+    components: {
+      header: MainHeader,
+      menu: MenuBar,
+      default: CodeDetailModifyPage,
+      footer: Footer
+    },
+    props: {
+      default: true
+    },
+    beforeEnter (to, from, next) {
+      const { isAdmin } = store.getters
+      if (!isAdmin) {
+        alert('관리자 권한이 필요합니다!')
+        next({ name: 'Signin' })
+      }
+      next()
+    }
   }
+
 ]
