@@ -7,7 +7,8 @@ import {
   FETCH_CODEGROUP_LIST,
   FETCH_CODEGROUP,
   FETCH_CODEDETAIL_LIST,
-  FETCH_CODEDETAIL
+  FETCH_CODEDETAIL,
+  FETCH_JOBCODE_LIST
 } from './mutation-types'
 
 export default {
@@ -61,6 +62,12 @@ export default {
     return api.get(`/codedetails/${groupCode}/${codeValue}`)
       .then(res => {
         commit(FETCH_CODEDETAIL, res.data)
+      })
+  },
+  fetchJobCodeList ({ commit }) {
+    return api.get('/codes/job')
+      .then(res => {
+        commit(FETCH_JOBCODE_LIST, res.data)
       })
   }
 }
