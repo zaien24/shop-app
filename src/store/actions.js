@@ -15,7 +15,8 @@ import {
   FETCH_BOARD,
   FETCH_NOTICE_LIST,
   FETCH_NOTICE,
-  FETCH_ITEM_LIST
+  FETCH_ITEM_LIST,
+  FETCH_ITEM
 } from './mutation-types'
 
 export default {
@@ -116,7 +117,7 @@ export default {
   fetchItemList ({ commit }) {
     return api.get('/items')
       .then(res => {
-        commit(FETCH_ITEM, res.data)
+        commit(FETCH_ITEM_LIST, res.data)
       })
   }
 }

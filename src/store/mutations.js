@@ -14,7 +14,8 @@ import {
   FETCH_BOARD,
   FETCH_NOTICE_LIST,
   FETCH_NOTICE,
-  FETCH_ITEM_LIST
+  FETCH_ITEM_LIST,
+  FETCH_ITEM
 } from './mutation-types'
 
 import api from '@/api'
