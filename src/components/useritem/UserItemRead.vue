@@ -19,7 +19,7 @@
 			</tr>	
 			<tr>
 				<td>상품설명</td>
-				<td><textarea :value="userItem.content" readonly></textarea></td>
+				<td><textarea :value="userItem.description" readonly></textarea></td>
 			</tr>
 		</table>
   </div>

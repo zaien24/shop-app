@@ -12,7 +12,7 @@
         <td colspan="4">
           List is empty.
         </td>
-      </tr>
+      </tr>      
       
       <tr v-else v-for="payCoin in payCoins" :key="payCoin.historyNo">
         <td align="center">{{ payCoin.historyNo }}</td>
