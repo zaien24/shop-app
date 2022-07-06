@@ -18,7 +18,7 @@ export const CodeDetailRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
-      const { isAdmin } = store.getters
+      const isAdmin = store.getters['authStore/isAdmin']
       if (!isAdmin) {
         alert('관리자 권한이 필요합니다!')
         next({ name: 'Signin' })
@@ -36,7 +36,7 @@ export const CodeDetailRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
-      const { isAdmin } = store.getters
+      const isAdmin = store.getters['authStore/isAdmin']
       if (!isAdmin) {
         alert('관리자 권한이 필요합니다!')
         next({ name: 'Signin' })
@@ -78,7 +78,7 @@ export const CodeDetailRouters = [
       default: true
     },
     beforeEnter (to, from, next) {
-      const { isAdmin } = store.getters
+      const isAdmin = store.getters['authStore/isAdmin']
       if (!isAdmin) {
         alert('관리자 권한이 필요합니다!')
         next({ name: 'Signin' })

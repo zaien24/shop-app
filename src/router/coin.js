@@ -17,7 +17,7 @@ export const CoinRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
-      const { isAuthorized } = store.getters
+      const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
         next({ name: 'Signin' })
@@ -35,7 +35,7 @@ export const CoinRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
-      const { isAuthorized } = store.getters
+      const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
         next({ name: 'Signin' })
@@ -53,7 +53,7 @@ export const CoinRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
-      const { isAuthorized } = store.getters
+      const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
         next({ name: 'Signin' })

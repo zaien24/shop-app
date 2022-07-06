@@ -10,7 +10,7 @@ Vue.config.productionTip = false //Vue 앱이 처음 실행 될 때 나오는 �
 function init () {
   const savedToken = Cookies.get('accessToken')
   if (savedToken) {
-    return store.dispatch('signinByToken', savedToken)
+    return store.dispatch('authStore/signinByToken', savedToken)
   } else {
     return Promise.resolve()
   }

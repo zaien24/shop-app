@@ -24,7 +24,7 @@ export default {
         alert(err.response.data.message)
       })
     },
-    ...mapActions([ 'signin' ])
+    ...mapActions('authStore', [ 'signin' ])
   }
 }
 </script>
