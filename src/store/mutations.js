@@ -83,5 +83,4 @@ export default {
   [FETCH_ITEM] (state, item) {
     state.item = item
   }
-
 }
