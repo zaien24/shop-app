@@ -9,7 +9,7 @@
     </template>
     <template v-if="isAdmin">
       <button @click="onDelete">삭제</button>
-    </template>
+    </template>     
     <router-link :to="{ name: 'BoardListPage' }">목록</router-link>
   </div>
 </template>

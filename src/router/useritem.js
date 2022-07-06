@@ -2,18 +2,17 @@ import store from '@/store'
 import MainHeader from '@/components/common/MainHeader'
 import Footer from '@/components/common/Footer'
 import MenuBar from '@/components/common/MenuBar'
-import CoinChargeListPage from '@/pages/coin/CoinChargeListPage'
-import CoinChargeRegisterPage from '@/pages/coin/CoinChargeRegisterPage'
-import CoinPayListPage from '@/pages/coin/CoinPayListPage'
+import UserItemListPage from '@/pages/useritem/UserItemListPage'
+import UserItemReadPage from '@/pages/useritem/UserItemReadPage'
 
-export const CoinRouters = [
+export const UserItemRouters = [
   {
-    path: '/coin',
-    name: 'CoinChargeListPage',
+    path: '/useritem',
+    name: 'UserItemListPage',
     components: {
       header: MainHeader,
       menu: MenuBar,
-      default: CoinChargeListPage,
+      default: UserItemListPage,
       footer: Footer
     },
     beforeEnter (to, from, next) {
@@ -26,31 +25,16 @@ export const CoinRouters = [
     }
   },
   {
-    path: '/coin/register',
-    name: 'CoinChargeRegisterPage',
+    path: '/useritem/:userItemNo',
+    name: 'UserItemReadPage',
     components: {
       header: MainHeader,
       menu: MenuBar,
-      default: CoinChargeRegisterPage,
+      default: UserItemReadPage,
       footer: Footer
     },
-    beforeEnter (to, from, next) {
-      const { isAuthorized } = store.getters
-      if (!isAuthorized) {
-        alert('로그인이 필요합니다!')
-        next({ name: 'Signin' })
-      }
-      next()
-    }
-  },
-  {
-    path: '/coin/pay',
-    name: 'CoinPayListPage',
-    components: {
-      header: MainHeader,
-      menu: MenuBar,
-      default: CoinPayListPage,
-      footer: Footer
+    props: {
+      default: true
     },
     beforeEnter (to, from, next) {
       const { isAuthorized } = store.getters

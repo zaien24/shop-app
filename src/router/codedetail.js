@@ -86,5 +86,4 @@ export const CodeDetailRouters = [
       next()
     }
   }
-
 ]

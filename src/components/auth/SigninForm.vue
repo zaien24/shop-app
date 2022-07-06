@@ -27,7 +27,6 @@ export default {
   },
   methods: {
     submit () {
-        console.log("this : " + this.userid, + " " + this.password)
       const { userid, password } = this
       this.$emit('submit', { userid, password })
     }

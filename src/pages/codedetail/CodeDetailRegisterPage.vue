@@ -33,7 +33,7 @@ export default {
           alert('등록이 완료되었습니다.')
           this.$router.push({
             name: 'CodeDetailReadPage',
-            params: { groupCode: res.data.groupCode, codeValue: res.data.codeValue}
+            params: { groupCode: res.data.groupCode,  codeValue: res.data.codeValue}
           })
         })
         .catch(err => {

@@ -5,6 +5,7 @@
     <p v-else>loading...</p>
     <router-link v-if="isAdmin" :to="{ name: 'ItemModifyPage', params: { itemId } }">편집</router-link>
     <button v-if="isAdmin" @click="onDelete">삭제</button>
+    <button v-if="isMember" @click="onBuy">구매</button>
     <router-link :to="{ name: 'ItemListPage' }">목록</router-link>
   </div>
 </template>
@@ -16,7 +17,6 @@ import { mapGetters, mapState, mapActions } from 'vuex'
 
 export default {
   name: 'ItemReadPage',
-  components: { ItemRead },
   props: {
     itemId: {
       type: String,
@@ -48,10 +48,30 @@ export default {
           alert(err.response.data.message)
         })
     },
+    onBuy () {
+      const {itemId} = this.item
+      api.get(`/items/buy/${itemId}`)
+        .then(res => {
+          alert(res.data)
+        })
+        .catch(err => {
+          if (err.response.status === 401) {
+            alert('로그인이 필요합니다.')
+            this.$router.push({ name: 'Signin' })
+          } else if (err.response.status === 403) {
+            alert('접근 권한이 없습니다.')
+            this.$router.back()
+          } else {
+            alert(err.response.data.message)
+          }
+        })
+    },
     ...mapActions([
       'fetchItem'
     ])
+  },
+  components: {
+    ItemRead
   }
-  
 }
 </script>

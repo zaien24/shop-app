@@ -5,10 +5,10 @@
 				<td>그룹코드</td>
 				<td>
 					<select v-model="groupCode">
-                        <option v-for="codeGroup in codeGroups" :value="codeGroup.groupCode" :key="codeGroup.groupCode">
-                        {{codeGroup.groupName}}
-                        </option>
-                    </select>
+            <option v-for="codeGroup in codeGroups" :value="codeGroup.groupCode" :key="codeGroup.groupCode">
+              {{codeGroup.groupName}}
+            </option>
+          </select>
 				</td>
 			</tr>
 			<tr>

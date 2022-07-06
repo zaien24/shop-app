@@ -12,7 +12,9 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'Signin',
-  components: { SigninForm },
+  components: {
+    SigninForm
+  },
   methods: {
     onSubmit (payload) {
       this.signin(payload).then(res => {
