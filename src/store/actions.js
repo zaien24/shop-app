@@ -119,5 +119,11 @@ export default {
       .then(res => {
         commit(FETCH_ITEM_LIST, res.data)
       })
+  },
+  fetchItem ({ commit }, itemId) {
+    return api.get(`/items/${itemId}`)
+      .then(res => {
+        commit(FETCH_ITEM, res.data)
+      })
   }
 }

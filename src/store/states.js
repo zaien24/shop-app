@@ -13,4 +13,5 @@ export default {
   notices: [],
   notice: null,
   items: [],
+  item: null,
 }

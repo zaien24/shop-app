@@ -4,6 +4,7 @@ import Footer from '@/components/common/Footer'
 import MenuBar from '@/components/common/MenuBar'
 import ItemListPage from '@/pages/item/ItemListPage'
 import ItemRegisterPage from '@/pages/item/ItemRegisterPage'
+import ItemReadPage from '@/pages/item/ItemReadPage'
 
 export const ItemRouters = [
     // 목록 화면 라우터 정의 
@@ -36,4 +37,18 @@ export const ItemRouters = [
           next()
         }
       },
+      {
+        path: '/item/:itemId',
+        name: 'ItemReadPage',
+        components: {
+          header: MainHeader,
+          menu: MenuBar,
+          default: ItemReadPage,
+          footer: Footer
+        },
+        props: {
+          default: true
+        }
+      },
+
 ]
