@@ -13,7 +13,8 @@ import {
   FETCH_BOARD_LIST,
   FETCH_BOARD,
   FETCH_NOTICE_LIST,
-  FETCH_NOTICE
+  FETCH_NOTICE,
+  FETCH_ITEM_LIST
 } from './mutation-types'
 
 import api from '@/api'
@@ -74,5 +75,10 @@ export default {
   },
   [FETCH_NOTICE] (state, notice) {
     state.notice = notice
+  },
+  [FETCH_ITEM_LIST] (state, items) {
+    state.items = items
   }
+
+
 }

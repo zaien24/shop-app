@@ -11,5 +11,6 @@ export default {
   boards: [],
   board: null,
   notices: [],
-  notice: null
+  notice: null,
+  items: [],
 }
