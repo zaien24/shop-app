@@ -17,7 +17,7 @@ export default {
   name: 'PdsRegisterPage',
   components: { PdsRegisterForm },
   computed: {
-    ...mapState([ 'attachments' ])
+    ...mapState('pdsStore', [ 'attachments' ])
   },
   created () {
     this.resetAttach()
@@ -52,7 +52,7 @@ export default {
     onRemoveAttach (index) {
       this.removeAttach(index)
     },
-    ...mapActions([
+    ...mapActions('pdsStore', [
       'addAttach',
       'resetAttach',
       'removeAttach'

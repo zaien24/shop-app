@@ -14,7 +14,7 @@ export default {
   name: 'MemberRegisterPage',
   components: { MemberRegisterForm },
   computed: {
-    ...mapState([
+    ...mapState('commonStore', [
       'jobCodes'
     ])
   },
@@ -40,7 +40,7 @@ export default {
           alert(err.response.data.message)
         })
     },
-    ...mapActions([
+    ...mapActions('commonStore', [
       'fetchJobCodeList'
     ])
   }

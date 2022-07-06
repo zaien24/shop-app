@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'board' ])
+    ...mapState('boardStore', [ 'board' ])
   },
   methods: {
     onSubmit (payload) {

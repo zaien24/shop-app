@@ -15,9 +15,9 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'MainHeader',
-  computed: {
-    ...mapState([ 'myinfo' ]),
-    ...mapGetters([ 'isAuthorized', 'isAdmin' ])
+    computed: {
+    ...mapState('authStore', [ 'myinfo' ]),
+    ...mapGetters('authStore', [ 'isAuthorized', 'isAdmin' ])
   },
   methods: {
     onClickSignout () {
@@ -25,7 +25,7 @@ export default {
       alert('로그아웃 되었습니다.')
       this.$router.push({ name: 'Home' })
     },
-    ...mapActions([ 'signout' ])
+    ...mapActions('authStore', [ 'signout' ])
   }
 }
 </script>

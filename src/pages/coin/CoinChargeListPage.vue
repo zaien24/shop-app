@@ -13,13 +13,13 @@ export default {
   name: 'CoinChargeListPage',
   components: { CoinChargeList },
   computed: {
-    ...mapState([ 'chargeCoins' ])
+    ...mapState('coinStore', [ 'chargeCoins' ])
   },
   mounted () {
     this.fetchChargeCoinList()
   },
   methods: {
-    ...mapActions(['fetchChargeCoinList'])
+    ...mapActions('coinStore', ['fetchChargeCoinList'])
   }
 }
 </script>

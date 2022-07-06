@@ -43,7 +43,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'MenuBar',
   computed: {
-    ...mapGetters([ 'isAuthorized', 'isAdmin' ])
+    ...mapGetters('authStore', [ 'isAuthorized', 'isAdmin' ])
   }
 }
 </script>

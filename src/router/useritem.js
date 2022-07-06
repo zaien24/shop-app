@@ -16,6 +16,9 @@ export const UserItemRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAuthorized } = store.getters
+      */
       const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
@@ -37,6 +40,9 @@ export const UserItemRouters = [
       default: true
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAuthorized } = store.getters
+      */
       const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')

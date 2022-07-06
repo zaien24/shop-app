@@ -14,7 +14,7 @@ export default {
   name: 'UserItemListPage',
   components: { UserItemList },
   computed: {
-    ...mapState([ 'userItems' ])
+    ...mapState('userItemStore', [ 'userItems' ])
   },
   mounted () {
     this.fetchUserItemList()
@@ -39,7 +39,7 @@ export default {
           link.click()
       })
     },
-    ...mapActions(['fetchUserItemList'])
+    ...mapActions('userItemStore', ['fetchUserItemList'])
   }
 }
 </script>

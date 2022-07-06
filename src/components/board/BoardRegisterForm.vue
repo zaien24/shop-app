@@ -34,8 +34,8 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'myinfo' ]),
-    ...mapGetters([ 'isAuthorized' ])
+    ...mapState('authStore', [ 'myinfo' ]),
+    ...mapGetters('authStore', [ 'isAuthorized' ])
   },
   methods: {
     onSubmit () {

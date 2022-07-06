@@ -3,7 +3,7 @@
     <h2>회원게시판 상세보기</h2>
     <board-read v-if="board" :board="board"/>
     <p v-else>loading...</p>
-    <template v-if="isAuthorized && board && (myinfo.userId === board.writer)">
+    <template v-if="isAuthorized && (myinfo.userId === board.writer)">
       <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">편집</router-link>
       <button @click="onDelete">삭제</button>
     </template>
@@ -29,13 +29,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
+    ...mapGetters('authStore', [
       'isAuthorized',
       'isAdmin'
     ]),
-    ...mapState([
-      'board',
+    ...mapState('authStore', [
       'myinfo'
+    ]),
+    ...mapState('boardStore', [
+      'board'
     ])
   },
   created () {
@@ -65,7 +67,7 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('boardStore', [
       'fetchBoard'
     ])
   }

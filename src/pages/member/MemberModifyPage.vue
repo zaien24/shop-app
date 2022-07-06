@@ -24,7 +24,8 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'member', 'jobCodes' ])
+    ...mapState('commonStore', [ 'jobCodes' ]),
+    ...mapState('memberStore', [ 'member' ])
   },
   created () {
     this.fetchJobCodeList()
@@ -54,8 +55,10 @@ export default {
           alert(err.response.data.message)
         })
     },
-    ...mapActions([
+    ...mapActions('commonStore', [
       'fetchJobCodeList',
+    ]),
+    ...mapActions('memberStore', [
       'fetchMember'
     ])
   }

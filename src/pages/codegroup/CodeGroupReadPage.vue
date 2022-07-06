@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([
+    ...mapState('codeGroupStore', [
       'codeGroup'
     ])
   },
@@ -54,7 +54,7 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('codeGroupStore', [
       'fetchCodeGroup'
     ])
   }

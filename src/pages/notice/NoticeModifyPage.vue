@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'notice' ])
+    ...mapState('noticeStore', [ 'notice' ])
   },
   created () {
     this.fetchNotice(this.noticeNo)
@@ -33,7 +33,7 @@ export default {
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions('noticeStore', [
       'fetchNotice'
     ]),
     onSubmit (payload) {

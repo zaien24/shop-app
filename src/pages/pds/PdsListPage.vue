@@ -14,16 +14,16 @@ export default {
   name: 'PdsListPage',
   components: { PdsList },
   computed: {
-    ...mapGetters([
+    ...mapGetters('authStore', [
       'isAdmin'
     ]),
-    ...mapState([ 'pdsItems' ])
+    ...mapState('pdsStore', [ 'pdsItems' ])
   },
   mounted () {
     this.fetchPdsList()
   },
   methods: {
-    ...mapActions(['fetchPdsList'])
+    ...mapActions('pdsStore', ['fetchPdsList'])
   }
 }
 </script>

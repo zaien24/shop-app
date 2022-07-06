@@ -14,13 +14,13 @@ export default {
   name: 'CodeDetailListPage',
   components: { CodeDetailList },
   computed: {
-    ...mapState([ 'codeDetails' ])
+    ...mapState('codeDetailStore', [ 'codeDetails' ])
   },
   mounted () {
     this.fetchCodeDetailList()
   },
   methods: {
-    ...mapActions(['fetchCodeDetailList'])
+    ...mapActions('codeDetailStore', ['fetchCodeDetailList'])
   }
 }
 </script>

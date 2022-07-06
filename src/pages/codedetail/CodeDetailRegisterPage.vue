@@ -14,7 +14,7 @@ export default {
   name: 'CodeDetailRegisterPage',
   components: { CodeDetailRegisterForm },
   computed: {
-    ...mapState([
+    ...mapState('codeGroupStore', [
       'codeGroups'
     ])
   },
@@ -48,7 +48,7 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('codeGroupStore', [
       'fetchCodeGroupList'
     ])
   }

@@ -14,13 +14,13 @@ export default {
   name: 'CodeGroupListPage',
   components: { CodeGroupList },
   computed: {
-    ...mapState([ 'codeGroups' ])
+    ...mapState('codeGroupStore', [ 'codeGroups' ])
   },
   mounted () {
     this.fetchCodeGroupList()
   },
   methods: {
-    ...mapActions(['fetchCodeGroupList'])
+    ...mapActions('codeGroupStore', ['fetchCodeGroupList'])
   }
 }
 </script>

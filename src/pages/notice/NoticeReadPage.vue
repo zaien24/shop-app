@@ -25,10 +25,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
+    ...mapGetters('authStore', [
       'isAdmin'
     ]),
-    ...mapState([
+    ...mapState('noticeStore', [
       'notice'
     ])
   },
@@ -59,7 +59,7 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('noticeStore', [
       'fetchNotice'
     ])
   },

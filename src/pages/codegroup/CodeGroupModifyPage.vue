@@ -21,7 +21,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'codeGroup' ])
+    ...mapState('codeGroupStore', [ 'codeGroup' ])
   },
   created () {
     this.fetchCodeGroup(this.groupCode)
@@ -31,7 +31,7 @@ export default {
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions('codeGroupStore', [
       'fetchCodeGroup'
     ]),
     onSubmit (payload) {

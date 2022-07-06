@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'item' ])
+    ...mapState('itemStore', [ 'item' ])
   },
   created () {
     this.fetchItem(this.itemId)
@@ -33,7 +33,7 @@ export default {
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions('itemStore', [
       'fetchItem'
     ]),
     onSubmit (payload) {

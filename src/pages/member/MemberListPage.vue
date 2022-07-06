@@ -14,13 +14,13 @@ export default {
   name: 'MemberListPage',
   components: { MemberList },
   computed: {
-    ...mapState([ 'members' ])
+    ...mapState('memberStore', [ 'members' ])
   },
   mounted () {
     this.fetchMemberList()
   },
   methods: {
-    ...mapActions(['fetchMemberList'])
+    ...mapActions('memberStore', ['fetchMemberList'])
   }
 }
 </script>

@@ -29,8 +29,10 @@ export default {
     }
   },
   computed: {
-    ...mapState([
+    ...mapState('codeGroupStore', [
       'codeGroups',
+    ]),
+    ...mapState('codeDetailStore', [
       'codeDetail'
     ])
   },
@@ -70,8 +72,10 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('codeGroupStore', [
       'fetchCodeGroupList',
+    ]),
+    ...mapActions('codeDetailStore', [
       'fetchCodeDetail'
     ])
   }

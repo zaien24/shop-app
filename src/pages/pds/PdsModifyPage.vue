@@ -26,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'pdsItem', 'attachments' ])
+    ...mapState('pdsStore', [ 'pdsItem', 'attachments' ])
   },
   created () {
     this.fetchPds(this.itemId)
@@ -65,7 +65,7 @@ export default {
     onRemoveAttach (index) {
       this.removeAttach(index)
     },
-    ...mapActions([
+    ...mapActions('pdsStore', [
       'addAttach',
       'resetAttach',
       'removeAttach',

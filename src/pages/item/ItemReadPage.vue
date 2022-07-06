@@ -24,10 +24,10 @@ export default {
     }
   },
   computed: {
-    ...mapState([
+    ...mapState('itemStore', [
       'item'
     ]),
-    ...mapGetters([ 'isAdmin', 'isMember' ])
+    ...mapGetters('authStore', [ 'isAdmin', 'isMember' ])
   },
   created () {
     this.fetchItem(this.itemId)
@@ -66,7 +66,7 @@ export default {
           }
         })
     },
-    ...mapActions([
+    ...mapActions('itemStore', [
       'fetchItem'
     ])
   },

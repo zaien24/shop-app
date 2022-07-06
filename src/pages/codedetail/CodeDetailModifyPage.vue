@@ -28,7 +28,8 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'codeGroups', 'codeDetail' ])
+    ...mapState('codeGroupStore', [ 'codeGroups' ]),
+    ...mapState('codeDetailStore', [ 'codeDetail' ])
   },
   created () {
     this.fetchCodeGroupList()
@@ -47,8 +48,10 @@ export default {
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions('codeGroupStore', [
       'fetchCodeGroupList',
+    ]),
+    ...mapActions('codeDetailStore', [
       'fetchCodeDetail'
     ]),
     onSubmit (payload) {

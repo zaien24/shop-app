@@ -26,8 +26,11 @@ export default {
     }
   },
   computed: {
-    ...mapState([
-      'member', 'jobCodes'
+    ...mapState('commonStore', [
+      'jobCodes'
+    ]),
+    ...mapState('memberStore', [
+      'member'
     ])
   },
   created () {
@@ -56,9 +59,11 @@ export default {
           alert(err.response.data.message)
         })
     },
-    ...mapActions([
-      'fetchMember',
+    ...mapActions('commonStore', [
       'fetchJobCodeList'
+    ]),
+    ...mapActions('memberStore', [
+      'fetchMember',
     ])
   }
 }

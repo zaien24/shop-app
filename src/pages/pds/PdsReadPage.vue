@@ -28,10 +28,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
+    ...mapGetters('authStore', [
       'isAdmin'
     ]),
-    ...mapState([
+    ...mapState('pdsStore', [
       'pdsItem',
       'attachments'
     ])
@@ -55,7 +55,7 @@ export default {
           alert(err.response.data.message)
         })
     },
-    ...mapActions([
+    ...mapActions('pdsStore', [
       'fetchPds'
     ])
   }

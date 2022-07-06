@@ -22,7 +22,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([
+    ...mapState('userItemStore', [
       'userItem'
     ])
   },
@@ -34,7 +34,7 @@ export default {
       })
   },
   methods: {
-    ...mapActions([
+    ...mapActions('userItemStore', [
       'fetchUserItem'
     ])
   }

@@ -28,8 +28,10 @@ export const BoardRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAuthorized } = store.getters
+      */
       const isAuthorized = store.getters['authStore/isAuthorized']
-
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
         next({ name: 'Signin' })
@@ -63,14 +65,17 @@ export const BoardRouters = [
       default: true
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAuthorized } = store.getters
+      */
       const isAuthorized = store.getters['authStore/isAuthorized']
       if (!isAuthorized) {
         alert('로그인이 필요합니다!')
         next({ name: 'Signin' })
       }
-      store.dispatch('fetchBoard', to.params.boardNo)
+      store.dispatch('boardStore/fetchBoard', to.params.boardNo)
         .then(() => {
-          const board = store.state.board
+          const board = store.state.boardStore.board 
           const isAuthor = board.writer === store.state.authStore.myinfo.userId
           if (isAuthor) {
             next()

@@ -13,13 +13,13 @@ export default {
   name: 'CoinPayListPage',
   components: { CoinPayList },
   computed: {
-    ...mapState([ 'payCoins' ])
+    ...mapState('coinStore', [ 'payCoins' ])
   },
   mounted () {
     this.fetchPayCoinList()
   },
   methods: {
-    ...mapActions(['fetchPayCoinList'])
+    ...mapActions('coinStore', ['fetchPayCoinList'])
   }
 }
 </script>

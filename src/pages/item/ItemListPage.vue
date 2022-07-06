@@ -16,14 +16,14 @@ export default {
   name: 'ItemListPage',
   components: { ItemList },
   computed: {
-    ...mapState([ 'items' ]),
-    ...mapGetters([ 'isAdmin' ])
+    ...mapState('itemStore', [ 'items' ]),
+    ...mapGetters('authStore', [ 'isAdmin' ])
   },
   mounted () {
     this.fetchItemList()
   },
   methods: {
-    ...mapActions(['fetchItemList'])
+    ...mapActions('itemStore', ['fetchItemList'])
   }
 }
 </script>

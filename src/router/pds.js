@@ -28,6 +28,9 @@ export const PdsRouters = [
       footer: Footer
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAdmin } = store.getters
+      */
       const isAdmin = store.getters['authStore/isAdmin']
       if (!isAdmin) {
         alert('관리자 권한이 필요합니다!')
@@ -62,6 +65,9 @@ export const PdsRouters = [
       default: true
     },
     beforeEnter (to, from, next) {
+      /*      
+      const { isAdmin } = store.getters
+      */
       const isAdmin = store.getters['authStore/isAdmin']
       if (!isAdmin) {
         alert('관리자 권한이 필요합니다!')

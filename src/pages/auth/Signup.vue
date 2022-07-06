@@ -15,9 +15,7 @@ export default {
   name: 'Signup',
   components: { SignupForm },
   computed: {
-    ...mapState([
-      'jobCodes'
-    ])
+    ...mapState('commonStore', [ 'jobCodes' ])
   },
   created () {
     this.fetchJobCodeList()
@@ -38,9 +36,7 @@ export default {
           alert(err.response.data.message)
         })
     },
-    ...mapActions([
-      'fetchJobCodeList'
-    ])
+    ...mapActions('commonStore', [ 'fetchJobCodeList' ])
   }
 }
 </script>

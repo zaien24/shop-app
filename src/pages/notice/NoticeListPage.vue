@@ -14,16 +14,16 @@ export default {
   name: 'NoticeListPage',
   components: { NoticeList },
   computed: {
-    ...mapGetters([
+    ...mapGetters('authStore', [
       'isAdmin'
     ]),
-    ...mapState([ 'notices' ])
+    ...mapState('noticeStore', [ 'notices' ])
   },
   mounted () {
     this.fetchNoticeList()
   },
   methods: {
-    ...mapActions(['fetchNoticeList'])
+    ...mapActions('noticeStore', ['fetchNoticeList'])
   }
 }
 </script>

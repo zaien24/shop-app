@@ -14,16 +14,14 @@ export default {
   name: 'BoardListPage',
   components: { BoardList },
   computed: {
-    ...mapGetters([
-      'isMember'
-    ]),
-    ...mapState([ 'boards' ])
+    ...mapGetters('authStore', ['isMember']),
+    ...mapState('boardStore', [ 'boards' ])
   },
   mounted () {
     this.fetchBoardList()
   },
   methods: {
-    ...mapActions(['fetchBoardList'])
+    ...mapActions('boardStore', ['fetchBoardList'])
   }
 }
 </script>
